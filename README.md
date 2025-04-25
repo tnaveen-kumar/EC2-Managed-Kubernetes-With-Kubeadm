@@ -1,34 +1,47 @@
 # EC2-Managed-Kubernetes-With-Kubeadm
 
 # Do the initial setup with the terraform to launch the EC2 instances. The terraform code will create the below listed resources 
+
 VPC
+
 Subnet
+
 Internet Gateway
+
 Attach Internet Gateway to the VPC
+
 Route table
+
 Security Group
+
 associate the EPI to the instances 
+
 Run the initial package script across all instacnes. Package Script Source: https://github.com/networknuts/kubernetes/blob/master/scripts/packages-kubernetes-1.30
+
 You should store the above script in scripts folder named init-script.sh
 
 main.tf
+
 scripts\init-script.sh
 
 AWS provider should be already configured. You can run some sample commands like "aws s3 ls" to see if you can talk to your aws accountr via cli. 
 
 ##Initaite terraform
+
 terraform init
 
 ##Run validate and plan for your review(optional)
+
 terraform validate
+
 terraform plan
 
 ##Deploy the resources
+
 terraform apply
 
 
-
-##Login to the master instance
+# Login to the master instance
 
 ##Pull images before initializing the cluster
 
