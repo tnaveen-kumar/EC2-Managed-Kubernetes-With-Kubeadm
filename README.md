@@ -16,7 +16,9 @@ Security Group
 
 associate the EPI to the instances 
 
-Run the initial package script across all instacnes. Package Script Source: https://github.com/networknuts/kubernetes/blob/master/scripts/packages-kubernetes-1.30
+Run the initial package script across all instacnes. 
+ 
+ -> Package Script Source: https://github.com/networknuts/kubernetes/blob/master/scripts/packages-kubernetes-1.30
 
 You should store the above script in scripts folder named init-script.sh
 
@@ -51,21 +53,24 @@ sudo kubeadm config images pull
 
 sudo kubeadm init --apiserver-advertise-address <master-private-ip> --pod-network-cidr <private-cidr>
 
-##Post that run these commands to update the kube config
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+##Post that follow the instructions on the screen to udpate the kube config and create the pod network using Calico
 
 ##Create a yaml file to create the calico network
+
 ##Source: https://github.com/networknuts/kubernetes/blob/master/scripts/calico.yaml
+
 kubectl apply -f network.yaml
 
 ##Check the pod status
+
 kubectl -n kube-system get pods
 
 ##Get the node details
+
 kubectl get nodes
 
 ##Once the control-plane is ready. You can join the worker nodes
+
 ##Generate the command with token to join the nodes. Run those commands on the worker nodes
+
 kubeadm token create --print-join-command
