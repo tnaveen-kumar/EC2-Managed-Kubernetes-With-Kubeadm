@@ -28,24 +28,24 @@ terraform apply
 
 ##Sample Output
 Apply complete! Resources: 16 added, 0 changed, 0 destroyed.
-Outputs:
-instance_info = [
-  {
-    "name" = "Master"
-    "private_ip" = "10.5.1.95"
-    "public_ip" = "18.204.187.106"
-  },
-  {
-    "name" = "Node-1"
-    "private_ip" = "10.5.1.51"
-    "public_ip" = "13.219.116.105"
-  },
-  {
-    "name" = "Node-2"
-    "private_ip" = "10.5.1.30"
-    "public_ip" = "35.169.9.102"
-  },
-]
+  Outputs:
+  instance_info = [
+    {
+      "name" = "Master"
+      "private_ip" = "10.5.1.95"
+      "public_ip" = "18.204.187.106"
+    },
+    {
+      "name" = "Node-1"
+      "private_ip" = "10.5.1.51"
+      "public_ip" = "13.219.116.105"
+    },
+    {
+      "name" = "Node-2"
+      "private_ip" = "10.5.1.30"
+      "public_ip" = "35.169.9.102"
+    },
+  ]
 
 ##Login to the master instance
 ##Pull images before initializing the cluster
